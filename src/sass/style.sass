@@ -1,25 +1,83 @@
-body
-    background-color: #ffffff
-    font-family: 'Roboto', sans-serif  
-.container__text
+body 
+    margin: 0
+    
+form
+    display: block
+    background-color: rgba(0, 0, 0, .2)
+    height: 400px
+    padding: 10px
     text-align: center
-    font-size: 27px
-    font-weight: bold
-    text-transform: uppercase
-    margin-bottom: 33px
-    &::after
-        content: ''
-        background: url('../img/14.png') center no-repeat
-        display: block
-        height: 6px
-.section 
+    input
+        margin-bottom: 5px
+
+.menu
+    opacity: .95
+    background-color: purple
+    position: fixed
+    width: 100vw
+    height: 100vh
+    z-index: 1
     display: flex
-    justify-content: space-around
-    flex-wrap: wrap 
-    &-block
-        display: flex
-        align-items: center
-        flex-basis: 22%  
-        justify-content: center
-        border: 1px solid #e5e5e5 
-        margin-bottom: 33px 
+    justify-content: center
+    align-items: center
+    transition: all 0.5s
+    left: -100vw
+    &_active
+        left: 0
+    ul
+        list-style: none
+        padding: 0
+        text-align: center
+        li
+            width: 100vw
+        a
+            display: block
+            width: 100vw
+            line-height: 4
+            font-weight: 100
+            color: #fff
+            text-decoration: none 
+            letter-spacing: 5px
+            transition: all 0.2s
+            &:hover
+                background-color: rgba(255, 255, 255, .4)  
+    &-link
+        z-index: 9
+        display: block
+        width: 50px
+        height: 50px
+        background-color: #fff
+        border-radius: 50%
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, .4)
+        position: fixed
+        top: 20px
+        left: 20px
+        span, span:before, span:after
+            display: block
+            height: 2px
+            width: 18px
+            position: absolute
+            left: 50%
+            margin-left: -9px
+            top: 50%
+            margin-top: -1px
+            background-color: #333
+        span:before
+            transition: all 0.2s
+            content: ''
+            margin-top: -7px
+        span:after
+            transition: all 0.2s
+            content: ''
+            margin-top: 5px
+        &_active span 
+            background: transparent
+        &_active span:before
+            transform: rotate(135deg)
+            margin-top: 0
+        &_active span:after
+            transform: rotate(-135deg)
+            margin-top: 0
+section 
+    padding: 20px 100px
+    height: 100vh
